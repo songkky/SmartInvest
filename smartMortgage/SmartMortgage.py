@@ -17,7 +17,7 @@ mortgage = property_price - down_payment
 monthly_repayment = float(mortgage) * mortgage_monthly_rate * ((1 + mortgage_monthly_rate) ** (12 * mortgage_years)) / \
     ((1 + mortgage_monthly_rate) ** (12 * mortgage_years) - 1)
 
-print "Monthly Mortgage repayment:\t", round(monthly_repayment, 4), "* 10000 RMB"
+print("Monthly Mortgage repayment:\t", round(monthly_repayment, 4), "* 10000 RMB")
 
 wealth_years = 30
 
@@ -31,7 +31,5 @@ property_wealth = property_price
 for this_year in range(0, wealth_years):
     property_wealth = property_wealth * (1 + property_yearly_return_rate)
 
-print wealth_years, "years later, your cash wealth:\t", round(cash_wealth, 2), "* 10000 RMB"
-print wealth_years, "years later, your property wealth:\t", round(property_wealth, 2), "* 10000 RMB"
-
-
+print(wealth_years, "years later, your cash wealth:\t", round(cash_wealth, 2), "* 10000 RMB")
+print(wealth_years, "years later, your property wealth:\t", round(property_wealth, 2), "* 10000 RMB")
