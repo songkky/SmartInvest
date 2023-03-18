@@ -45,7 +45,7 @@ def datestr2dtdate(datestr):
 
 
 # 从csv文件获取指数价格数据
-index_price = pd.read_csv('rotationStrategy/300和500历史数据.csv').set_index('datetime')
+index_price = pd.read_csv('300和500历史数据.csv').set_index('datetime')
 index_price.index = [datestr2dtdate(e) for e in index_price.index]
 
 

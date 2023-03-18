@@ -8,7 +8,10 @@ import matplotlib.pyplot as plt
     1. []数组 可变  ()元组 不可变
     2. in range（x，y）  X 到 Y-1 的整数序列
     3. pd.pct_change()    当前元素和前一个元素的百分比变化。
-    3. pd.cumprod()   元素的累积乘积。
+    4. pd.cumprod()   元素的累积乘积。
+    5. pd.cummax()   查找序列的累积最大值,只增不减（每个元素都等于当前元素和前一个元素之间的较大者）
+    6. 计算回撤最简单办法：两步    hmax = p.cummax()          return p / hmax - 1
+    
 """
 
 
