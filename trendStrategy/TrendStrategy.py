@@ -12,7 +12,6 @@ def get_drawdown(p):
     for t in range(1, T):
         hmax.append(np.nanmax([p[t], hmax[t - 1]]))
     dd = [p[t] / hmax[t] - 1 for t in range(T)]
-
     return dd
 
 
@@ -25,9 +24,7 @@ def cal_period_perf_indicator(adjnav):
         res = pd.DataFrame(index=adjnav.columns, columns=['AnnRet', 'AnnVol', 'SR', 'MaxDD', 'Calmar'])
         for col in adjnav:
             res.loc[col] = cal_period_perf_indicator(adjnav[col])
-
         return res
-
     ret = adjnav.pct_change()
     #annret = np.nanmean(ret) * 242 # 单利
     annret = (adjnav[-1] / adjnav[0]) ** (242/len(adjnav)) - 1 # 复利
@@ -36,11 +33,10 @@ def cal_period_perf_indicator(adjnav):
     dd = get_drawdown(adjnav)
     mdd = np.nanmin(dd)
     calmar = annret / -mdd
-
     return [annret, annvol, sr, mdd, calmar]
 
+
 def datestr2dtdate(datestr):
-    # 日期格式转换：'yyyy-mm-dd'转为datetime.date
     return datetime.datetime.strptime(datestr, '%Y-%m-%d').date()
 
 
